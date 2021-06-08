@@ -10,7 +10,7 @@ function Row(props) {
   useEffect(() => {
 
     const getMovieRequest = async () => {
-      const url = `http://www.omdbapi.com/?s=${leafRoot}&apikey=263d22d8`;
+      const url = `http://www.omdbapi.com/?s=${leafRoot||'matrix'}&apikey=6ec22ca9`;
       const response = await fetch(url);
       const responseJson = await response.json();
       if (responseJson.Search) {
@@ -23,7 +23,7 @@ function Row(props) {
 
 
 	const saveToLocalStorage = async (items) => {
-	await	localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+	await	localStorage.setItem('elatech-goodies', JSON.stringify(items));
 	};
 
 	const addFavouriteMovie = (movie) => {

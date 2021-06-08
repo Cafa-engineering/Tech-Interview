@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 
-
 function Favorite(props) {
  
 	const [favourites, setFavourites] = useState([]);
@@ -11,20 +10,17 @@ function Favorite(props) {
 
 	useEffect(() => {
 		const movieFavourites = JSON.parse(
-			localStorage.getItem('react-movie-app-favourites')
+			localStorage.getItem('elatech-goodies')
 		);
 
 		if (movieFavourites) {
 			setFavourites(movieFavourites);
 		}
-        else{
-            setFavourites(null);
-        }
-
+     
 	}, [favourites]);
 
 	const saveToLocalStorage = async (items) => {
-	await	localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+	await	localStorage.setItem('elatech-goodies', JSON.stringify(items));
 	};
 	const removeFavouriteMovie = (movie) => {
 		const newFavouriteList = favourites.filter(
