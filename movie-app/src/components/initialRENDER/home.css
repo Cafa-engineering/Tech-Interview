@@ -1,6 +1,7 @@
 .compound-container {
   height: 90.3vh;
   width: 100%;
+  background-color: black;
 }
 .home-container {
   display: grid;
@@ -47,4 +48,15 @@
 .title-Title:hover {
   text-decoration: underline;
   color: steelblue;
+}
+#image-to-animate {
+  animation: animate-image 3s linear alternate-reverse infinite;
+}
+@keyframes animate-image {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(-300px);
+  }
 }

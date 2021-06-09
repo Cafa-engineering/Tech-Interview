@@ -5,6 +5,7 @@
   background-color: rgb(151, 135, 135);
   height: 100%;
   width: 85vw;
+  /* position: fixed; */
 }
 .div-container {
   height: 100%;
@@ -15,6 +16,7 @@
 }
 .head-container {
   display: flex;
+  margin-top: 70px;
 }
 .load-more-btn {
   height: 50px;

@@ -5,14 +5,48 @@ import MovieList from "./components/movielist/MovieList"
 import {data} from "./data"
 import "./App.css"
 import Home from "./components/initialRENDER/Home"
+import Navbar from "./components/navBar/Navbar"
+import {movieContext} from "./components/context/movieContext"
 function App() {
   const [movies, setMovies] = useState([])
   const [searchValue, setSearchValue] = useState('')
   const [isLoadMore, setIsLoadMore] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [favoriteCount, setFavoriteCount] = useState(0)
+  const [indexFavoriteArray, setIndexFavoriteArray] = useState([])
+  const [favoriteMovies, setFavoriteMovies] = useState([])
+  const [isFavorite, setIsFavorite] = useState(false)
   const inputSearchRef = useRef(null)
   const prevSearchRef = useRef('')
-  const[isInitialRender, setIsInitialRender] = useState(true)
+  const [isInitialRender, setIsInitialRender] = useState(true)
+    useEffect(() => {
+    if (isInitialRender) {
+      getInitialMovies();
+    }
+    getMovieRequestPage_1(searchValue);
+    prevSearchRef.current = searchValue;
+    inputSearchRef.current.focus();
+    
+
+
+    
+
+    }, [searchValue, isInitialRender])
+  const addFavorite = (index, imdbID) => {
+    setFavoriteCount(favoriteCount + 1)
+    setFavoriteMovies([...favoriteMovies,movies[index]])
+
+
+   
+
+  }
+  const favoriteDataFetch = () => {
+    console.log("Clicked")
+    setIsFavorite(true)
+  }
+  // console.log(favoriteMovies)
+
+  
   const getMovieRequestPage_1 = async (searchValue) => {
     const url_1 = `http://www.omdbapi.com/?s=${searchValue}&apikey=aab92671&page=1`
     // const url = "http://www.omdbapi.com/?i=tt3896198&apikey=aab92671"
@@ -66,30 +100,24 @@ function App() {
 
 
   }
-  useEffect(() => {
-    if (isInitialRender) {
-      getInitialMovies();
-    }
-    getMovieRequestPage_1(searchValue);
-    prevSearchRef.current = searchValue;
-    inputSearchRef.current.focus();
-    
 
-
-    
-
-  },[searchValue, isInitialRender])
 
   return (
-    <div className="main-container">
-      <div className = "head-container">
+    <movieContext.Provider value={{favoriteCount, addFavorite,isFavorite,favoriteDataFetch }}>
+          <div className="main-container">
+       <Navbar/>
+      <div className="head-container">
+       
         <Header setIsInitialRender={setIsInitialRender} setIsLoadMore={setIsLoadMore}
           setIsLoaded ={setIsLoaded}
         />
         <Search searchValue={searchValue} setSearchValue={setSearchValue}
           inputSearchRef={inputSearchRef}
           setIsLoaded={setIsLoaded}
-          setIsInitialRender = {setIsInitialRender}
+          setIsInitialRender={setIsInitialRender}
+          favoriteCount={favoriteCount}
+          favoriteDataFetch={favoriteDataFetch}
+          setIsFavorite = {setIsFavorite}
         />
       </div>
       
@@ -98,21 +126,19 @@ function App() {
      
           {
             isInitialRender ? <Home movies={ movies }/> :  (
-               <MovieList movies={movies} />
+              <MovieList movies={ isFavorite ? favoriteMovies: movies}
+                addFavorite = {addFavorite}
+              />
             )
-          }
-        
-        
-        
-        </div>
-        
+          }      
+        </div>      
       </div>
       {
-       isLoaded && (<button className = "load-more-btn" onClick = {getMovieRequestPage_2}>load  more</button>)
+        isLoaded && (<button className="load-more-btn" onClick={getMovieRequestPage_2}>load  more</button>)
       }
-      
-
     </div>
+    </movieContext.Provider>
+
   );
 }
 

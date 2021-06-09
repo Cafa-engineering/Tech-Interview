@@ -1,6 +1,7 @@
 import React from 'react'
 import "./home.css"
 import defaultImage from "../../assest/defaultImage.png"
+import wallpaper_1 from "../../assest/wallpaper_1.jpg"
 function Home(props) {
 
     const initialRender =[0,1,2]
@@ -15,18 +16,13 @@ function Home(props) {
                 
                     return (
                         <div className = "compound-container">
-                            <div className="home-container" key = {index} >                           
-                            {
-                                initialRender.map((num, index) => {
-                                    return (
-                                        <img src={Poster} alt={Title} className="image-style-initial"
+                            <div className="home-container" key = {index} style={{ backgroundImage:"url("+wallpaper_1+")"}}>                           
+  
+                            <img src={Poster} alt={Title} className="image-style-initial"  id = "image-to-animate"
                                onError={(event)=>event.target.setAttribute("src",defaultImage)}
                                                         
                             />
-                                    )
-                                })
-                            }
-                            
+      
                                
                             </div>
                          <div className = "initial-Title-year">

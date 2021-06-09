@@ -5,6 +5,7 @@ function Search(props) {
         props.setSearchValue(e.target.value)
         props.setIsLoaded(true)
         props.setIsInitialRender(false)
+        props.setIsFavorite(false)
         
     }
 
@@ -20,8 +21,11 @@ function Search(props) {
 
                
             />
-            <button id = "search-button">Sign In</button>
-              <button id = "search-button">Sign Up</button>
+            <button id = "search-button">Download</button>
+            
+            <div id="search-favorite" >
+                <button id ="cart" >Download</button>
+            </div>
             
             
         </div>
