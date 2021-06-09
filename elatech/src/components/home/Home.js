@@ -5,6 +5,7 @@ import Row from "../row/Row";
 import Favorite from '../row/favorite';
 import Detail from '../detail/Detail';
 import Footer from './Footer';
+import LimitTen from "../row/movies10";
 
 function Home() {
   const [selectedMovie, setSelectedMovie] = useState();
@@ -32,7 +33,9 @@ function Home() {
       <div className="app">
         <Nav searchValue={searchValue} handleChange={handleChange} />
         <Header />
-        <Row leafRoot={searchValue} title='ElaTech Goodies' onMovieSelected={selectMovie} />
+        <LimitTen leafRoot={searchValue} title='ElaTech Goodies' onMovieSelected={selectMovie}/>
+        <Row leafRoot={searchValue}  onMovieSelected={selectMovie} />
+       
         <Favorite title='Playlist Watch-later' />
         <Footer />
       

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-function Row(props) {
-  const [movies, setMovies] = useState([]);
+
+function LimitTen(props) {
+ 
+    const [movies, setMovies] = useState([]);
 	const [favourites, setFavourites] = useState([]);
 	
 
@@ -10,7 +12,7 @@ function Row(props) {
   useEffect(() => {
 
     const getMovieRequest = async () => {
-      const url = `http://www.omdbapi.com/?s=${leafRoot}&apikey=6ec22ca9`;
+      const url = `http://www.omdbapi.com/?s=avengers&apikey=6ec22ca9`;
       const response = await fetch(url);
       const responseJson = await response.json();
       if (responseJson.Search) {
@@ -39,9 +41,9 @@ function Row(props) {
 
   return (
     <div className="row">
-     
+      <h2>{title}</h2>
       <div className="row__posters">
-        {movies.slice(0,5).map((movie,index) => (
+        {movies.slice(0,11).map((movie,index) => (
           <img
           key={index}
             onClick={() => {
@@ -59,4 +61,4 @@ function Row(props) {
   );
 }
 
-export default Row;
+export default LimitTen;
