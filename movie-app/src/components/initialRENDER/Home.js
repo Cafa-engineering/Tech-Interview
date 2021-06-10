@@ -4,14 +4,14 @@ import defaultImage from "../../assest/defaultImage.png"
 import wallpaper_1 from "../../assest/wallpaper_1.jpg"
 function Home(props) {
 
-    const initialRender =[0,1,2]
+    console.log(props.movies)
     
     return (
         <>
             {
                 props.movies.map((mov, index) => {
                     const { Title, Poster, Type, Year } = mov
-                
+               
                 
                 
                     return (

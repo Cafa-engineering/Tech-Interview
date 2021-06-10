@@ -24,7 +24,9 @@ function Search(props) {
 
                
             />
-            <button id = "search-button">Download</button>
+            <div id = "header">
+                 <h2 >The best movies</h2>
+            </div>
 
             
             

@@ -1,13 +1,19 @@
 .container {
-  height: 320px;
+  height: 350px;
   width: 19.47%;
   display: grid;
   margin: 5px 1px;
-  border: 2px solid rgb(224, 219, 219);
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background-color: black;
   border: radius 100px;
+  color: whitesmoke;
+}
+#download-btn {
+  height: 20px;
+  width: 70px;
+  color: black;
+  font-weight: bold;
 }
 .container:hover {
   transform: scale(1.03);
@@ -17,7 +23,8 @@
   margin: 1px auto;
   width: 90%;
 }
-.title {
+.title,
+#download-btn {
   margin: 10px 5px;
 }
 .title-year {

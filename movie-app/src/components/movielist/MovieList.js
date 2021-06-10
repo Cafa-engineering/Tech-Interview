@@ -24,7 +24,8 @@ function MovieList(props) {
                             <div className = "title-year">
                                 <h6 className="title title-Title">{Title}</h6>
                                 <h6 className="title">{Year}</h6>
-                                 <h6 className="title">{ Type}</h6>
+                                <h6 className="title">{Type}</h6>
+                                <button id = "download-btn">Download</button>
                             </div>
                                
                        </div>

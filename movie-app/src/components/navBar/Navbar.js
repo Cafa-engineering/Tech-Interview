@@ -6,6 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import App from '../../App';
 import Contact from './Contact';
 import Home from './Home';
 import Login from './Login';
@@ -17,7 +18,8 @@ function Navbar() {
     return (
         <div className = "nav-container ">
             <Router>
-                <Nav/>
+                <Nav />
+                
             <Switch>
             <Route path="/" exact component = {Home}>
 

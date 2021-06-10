@@ -11,8 +11,7 @@ import {movieContext} from "../context/movieContext"
 
 function Nav() {
     const  { favoriteCount ,favoriteDataFetch} = useContext(movieContext)
-    const value = useContext(movieContext)
-    console.log(value)
+  
     
 
     return (
