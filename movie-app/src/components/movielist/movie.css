@@ -1,0 +1,36 @@
+.container {
+  height: 350px;
+  width: 19.47%;
+  display: grid;
+  margin: 5px 1px;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: radius 100px;
+  color: whitesmoke;
+}
+#download-btn {
+  height: 20px;
+  width: 70px;
+  color: black;
+  font-weight: bold;
+}
+.container:hover {
+  transform: scale(1.03);
+}
+.image-style {
+  height: 260px;
+  margin: 1px auto;
+  width: 90%;
+}
+.title,
+#download-btn {
+  margin: 10px 5px;
+}
+.title-year {
+  display: flex;
+}
+.title-Title:hover {
+  text-decoration: underline;
+  color: steelblue;
+}

@@ -1,0 +1,36 @@
+.main-container {
+  /* border: 2px solid rgb(106, 105, 162); */
+  margin: 0px auto;
+  justify-content: center;
+  background-color: rgb(151, 135, 135);
+  height: 100%;
+  width: 85vw;
+  /* position: fixed; */
+}
+.div-container {
+  height: 100%;
+  width: 99%;
+  margin: 2px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.head-container {
+  display: flex;
+  margin-top: 70px;
+}
+.load-more-btn {
+  height: 50px;
+  width: 90%;
+  color: white;
+  background-color: rgb(7, 7, 49);
+  font-size: 20px;
+  margin: 5px 62px;
+  border-radius: 10px;
+}
+.load-more-btn:hover {
+  background-color: rgb(15, 17, 39);
+}
+.parent-container {
+  position: relative;
+  /* background-color: aqua; */
+}
