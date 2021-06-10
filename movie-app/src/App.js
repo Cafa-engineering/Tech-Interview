@@ -7,6 +7,7 @@ import "./App.css"
 import Home from "./components/initialRENDER/Home"
 import Navbar from "./components/navBar/Navbar"
 import {movieContext} from "./components/context/movieContext"
+import Footer from "./components/footer/Footer"
 function App() {
   const [movies, setMovies] = useState([])
   const [searchValue, setSearchValue] = useState('')
@@ -103,8 +104,9 @@ function App() {
 
 
   return (
-    <movieContext.Provider value={{favoriteCount, addFavorite,isFavorite,favoriteDataFetch }}>
-          <div className="main-container">
+    <movieContext.Provider value={{ favoriteCount, addFavorite, isFavorite, favoriteDataFetch }}>
+      <div className="parent-container">
+                  <div className="main-container">
        <Navbar/>
       <div className="head-container">
        
@@ -135,8 +137,16 @@ function App() {
       </div>
       {
         isLoaded && (<button className="load-more-btn" onClick={getMovieRequestPage_2}>load  more</button>)
-      }
-    </div>
+        }
+       
+        </div>
+         <Footer/>
+        
+        
+      </div>
+
+      
+      
     </movieContext.Provider>
 
   );

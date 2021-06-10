@@ -23,10 +23,10 @@
 }
 .nav-link-items {
   display: flex;
-  background-color: rgb(176, 70, 180);
+  background-color: rgb(102, 93, 102);
   align-items: center;
   /* justify-content: flex-end; */
-  height: 90%;
+  height: 100%;
   width: 100%;
 }
 li {
@@ -43,7 +43,7 @@ li {
 .accounts,
 .links,
 .favorite {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 2px;
   height: 100%;
   margin-top: 0px;
@@ -63,13 +63,16 @@ li {
   background-color: rgb(76, 90, 114);
 }
 .favorite {
-  width: 8%;
+  width: 10%;
   background-color: rgb(30, 36, 49);
   justify-content: flex-end;
-  padding-right: 15px;
+  padding-right: 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .links {
-  width: 80%;
+  width: 78%;
   padding: 2px 5px;
   background-color: seagreen;
 }
@@ -80,12 +83,14 @@ li {
 }
 .logo {
   width: 20%;
-  border: 1px solid rgb(255, 0, 13);
-  height: 90%;
+  /* border: 1px solid rgb(255, 0, 13); */
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0px 2px;
+  background-color: rgb(21, 26, 23);
+  border-radius: 2px;
 }
 .items-links {
   width: 80%;

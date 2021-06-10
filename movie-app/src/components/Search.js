@@ -8,7 +8,10 @@ function Search(props) {
         props.setIsFavorite(false)
         
     }
-
+            
+            // <div id="search-favorite" >
+            //     <button id ="cart" >Download</button>
+            // </div>
    
     return (
         <div className="search">
@@ -22,10 +25,7 @@ function Search(props) {
                
             />
             <button id = "search-button">Download</button>
-            
-            <div id="search-favorite" >
-                <button id ="cart" >Download</button>
-            </div>
+
             
             
         </div>
