@@ -1,0 +1,29 @@
+.container {
+  height: 320px;
+  width: 19.47%;
+  display: grid;
+  margin: 5px 1px;
+  border: 2px solid rgb(224, 219, 219);
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  border: radius 100px;
+}
+.container:hover {
+  transform: scale(1.03);
+}
+.image-style {
+  height: 260px;
+  margin: 1px auto;
+  width: 90%;
+}
+.title {
+  margin: 10px 5px;
+}
+.title-year {
+  display: flex;
+}
+.title-Title:hover {
+  text-decoration: underline;
+  color: steelblue;
+}
